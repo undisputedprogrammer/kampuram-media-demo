@@ -21,3 +21,66 @@
 .about-copy .about-mission p{margin-top:5px;font-size:12px}
 .why-section{margin-top:54px}
 @media(max-width:700px){.about-section{gap:28px}.about-facts{gap:12px}.about-facts dt{font-size:7px;letter-spacing:.8px}.about-facts dd{font-size:14px}.about-facts dd.fact-pending{font-size:12px}.why-section{margin-top:36px}}
+
+.business-address{font-style:normal;font-size:12px;line-height:1.9;color:var(--muted);margin:12px 0}.contact-phone{display:block;width:fit-content;font-size:14px;font-weight:600}.contact-phone:hover{color:var(--orange-dark)}.location-directions{font-size:11px;margin-top:15px;gap:12px}
+
+/* Supplied logo: retain its proportions and transparent background. */
+.brand img{width:190px;height:auto;flex-shrink:0}
+.footer-top .brand img{width:160px;height:auto}
+.art-logo img{width:105px;height:auto;transform:none;box-shadow:none;border-radius:0}
+@media(max-width:950px){.brand img{width:170px}.art-logo img{width:75px}}
+@media(max-width:700px){.brand img{width:165px;height:auto}.art-logo img{width:85px;height:auto}.footer-top .brand img{width:150px}}
+@media(max-width:370px){.art-logo img{width:70px}}
+
+/* Compact brand signatures pair each logo with its business identity. */
+.business-card{display:flex;flex-direction:column}
+.card-body{display:flex;flex-direction:column;flex:1}
+.business-identity{display:flex;align-items:center;gap:15px;min-height:72px}
+.business-logo{display:flex;align-items:center;justify-content:center;flex:0 0 72px;width:72px;height:72px;padding:7px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.business-logo img{width:100%;height:100%;object-fit:contain;transform:none;border-radius:3px}
+.business-card:hover .business-logo img{transform:none}
+.business-heading{min-width:0}
+.business-heading .card-label{display:block;font-size:7px;letter-spacing:1.1px;line-height:1.6}
+.business-heading h3{font-size:clamp(17px,1.55vw,22px);line-height:1.3;letter-spacing:-.6px;margin-top:6px}
+.card-body>p{margin:17px 0 23px}
+.card-body>.card-link{margin-top:auto}
+@media(max-width:1100px) and (min-width:701px){.business-identity{gap:11px;min-height:66px}.business-logo{flex-basis:58px;width:58px;height:58px;padding:5px;border-radius:11px}.business-heading .card-label{font-size:6px;letter-spacing:.7px}.business-heading h3{font-size:17px}}
+@media(max-width:700px){.business-identity{gap:15px}.business-heading h3{font-size:21px}.business-heading .card-label{font-size:7px}.business-logo{flex-basis:68px;width:68px;height:68px;border-radius:13px}.card-body>p{font-size:13px;margin:17px 0 23px}}
+@media(max-width:370px){.business-identity{gap:11px}.business-logo{flex-basis:58px;width:58px;height:58px;padding:5px}.business-heading h3{font-size:18px}.business-heading .card-label{font-size:6px;letter-spacing:.7px}}
+
+#cards .business-logo{background:#b21f6b;border-color:#b21f6b;padding:4px}#books .business-logo{background:#1b1d53;border-color:#1b1d53;padding:4px}
+
+/* A restrained motion system: soft lifts, image depth and tactile controls. */
+:root{--motion-ease:cubic-bezier(.22,1,.36,1)}
+.business-card{transition:transform .4s var(--motion-ease),box-shadow .4s var(--motion-ease),border-color .3s ease}
+.card-image>img{transition:transform .75s var(--motion-ease)}
+.business-logo{transition:transform .4s var(--motion-ease),box-shadow .4s var(--motion-ease)}
+.button,.header-contact,.card-link,.floating-whatsapp,.menu-toggle{position:relative;isolation:isolate;overflow:hidden;transition:transform .25s var(--motion-ease),background .25s ease,box-shadow .25s ease}
+.floating-whatsapp{position:fixed}
+.press-ripple{position:absolute;border-radius:50%;background:currentColor;pointer-events:none;z-index:-1}
+.button svg,.header-contact svg,.text-link svg,.card-link span,.card-link svg{transition:transform .3s var(--motion-ease),background .3s ease,color .3s ease}
+.button:active,.header-contact:active,.menu-toggle:active{transform:scale(.96)}
+.card-link:active{transform:scale(.985)}
+.floating-whatsapp:active{transform:scale(.93)}
+.business-card:focus-within{border-color:#efbd9f;box-shadow:0 12px 32px #67472a0c}
+.site-header nav a:before{content:'';position:absolute;left:0;right:0;bottom:4px;height:1px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--motion-ease)}
+.site-header nav a:hover:before,.site-header nav a:focus-visible:before{transform:scaleX(1)}
+@media(hover:hover) and (pointer:fine){
+ .business-card:hover{transform:translateY(-7px);border-color:#e8d6c5;box-shadow:0 20px 45px #5b3e2310}
+ .business-card:hover .card-image>img{transform:scale(1.055)}
+ .business-card:hover .business-logo{transform:translateY(-2px);box-shadow:0 5px 12px #42301a0b}
+ .business-card:hover .card-link span{background:var(--orange);color:white}
+ .business-card:hover .card-link svg{transform:translateX(2px)}
+ .button:hover,.header-contact:hover{transform:translateY(-3px);box-shadow:0 7px 18px #59391f16}
+ .button:hover>svg:last-child,.header-contact:hover svg,.text-link:hover svg{transform:translateX(4px)}
+ .floating-whatsapp:hover{transform:translateY(-4px);box-shadow:0 9px 28px #10391e30}
+ .floating-whatsapp:hover svg{animation:chat-greeting .55s ease both}
+}
+@keyframes chat-greeting{0%,100%{transform:rotate(0)}30%{transform:rotate(-12deg)}65%{transform:rotate(9deg)}}
+@media(max-width:700px) and (prefers-reduced-motion:no-preference){.site-header nav.is-open{animation:menu-arrive .22s var(--motion-ease) both}}
+@keyframes menu-arrive{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation:none!important;transition:none!important}
+ .business-card:hover,.business-card:hover .card-image>img,.business-card:hover .business-logo,.button:hover,.button:active,.header-contact:hover,.header-contact:active,.card-link:active,.floating-whatsapp:hover,.floating-whatsapp:active,.menu-toggle:active,.button:hover>svg:last-child,.header-contact:hover svg,.text-link:hover svg,.business-card:hover .card-link svg{transform:none!important}
+}

@@ -6,12 +6,12 @@ Open `index.html` directly, or serve this folder with `python -m http.server 808
 
 ## Demo content
 
-- The orange K monogram and Kampuran Media wordmark are temporary. The latest requested spelling is used for the parent brand; the business names retain the earlier supplied spelling.
+- The supplied transparent `assets/kampuram-logo.png` is used for branding, with padding trimmed in `kampuram-logo-trimmed.png`. The globe is exported as `kampuram-symbol.png` for the About artwork and `favicon.png` for the browser tab. The original file is preserved. The logo reads Kampuram Digi World; page copy retains the previously requested company naming.
 - Photography is illustrative, not the company's actual work. The images are stored locally. Google Fonts are loaded online, with system sans-serif fallbacks.
 - Business navigation points to the three homepage cards. Only the homepage is implemented; public catalog pages and admin are future work.
-- Business buttons and WhatsApp buttons use the same contact handler. Set `WHATSAPP_NUMBER` in `script.js` to the real international phone number (digits only). Until configured, an accessible dialog explains the demo rather than contacting an invented number.
-- The location panel is a placeholder for the confirmed address and map. Social links are omitted until real account URLs are supplied.
-- Copy is proposed for design review and should be confirmed before publication. About follows the hero and covers the company story, experience, Kerala location, and a proposed mission. The user authorized dummy values: `15+ years` and `Kozhikode, Kerala`. Both must be replaced or verified before publication.
+- Business buttons and WhatsApp buttons use the same contact handler. The shared `WHATSAPP_NUMBER` in `script.js` is configured to the supplied business number, `919388002975`. Buttons open WhatsApp with a prefilled enquiry.
+- The location panel shows the supplied address at Madari Tower, Near Civil Station, Kacherippadi, Manjeri – 676121, Malappuram District, Kerala, India, with a phone link and a Google Maps address-search link. Social links are omitted until real account URLs are supplied.
+- Copy is proposed for design review and should be confirmed before publication. About follows the hero and covers the company story, experience, Kerala location, and a proposed mission. The experience value `15+ years` remains user-authorized dummy content and must be verified before publication. The location is now the supplied Manjeri address.
 
 ## Image assets
 
@@ -25,3 +25,7 @@ The current homepage uses three images generated with the built-in image generat
 These are demo images, not the founder’s actual desk, completed client campaigns, or books available for sale. The founder’s writing and literary background informed their direction. Exact generation prompts are recorded in `assets/image-prompts.json`.
 
 Earlier Unsplash samples remain unused in the assets folder: `creative-studio.jpg` (photo-1497215728101-856f4ea42174), `media.jpg` (photo-1541462608143-67571c6738dd), and `books.jpg` (photo-1512820790803-83ca734da794).
+
+## Business logos
+
+The three homepage cards use their supplied business logos in compact flex rows, pairing a contained logo badge with its category and business name. `kampuram-ad-media-trimmed.png` trims transparent padding from the supplied advertising logo. `cardskendra-logo-trimmed.png` is a cropped render of the supplied `cardskendra-logo.pdf`, preserving its colors and tagline. The Books card uses `kampuram-books.png`. Original files and main homepage branding are preserved.

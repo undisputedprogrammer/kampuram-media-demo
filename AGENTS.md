@@ -24,6 +24,13 @@ There are four public pages:
 
 Every public page has a banner, menu, content section, WhatsApp contact, and footer.
 
+## Confirmed contact details
+
+- Address: Madari Tower, Near Civil Station, Kacherippadi, Manjeri – 676121, Malappuram District, Kerala, India.
+- Phone / shared WhatsApp: +91 9388002975; WhatsApp URL digits: `919388002975`.
+- Use Manjeri in location summaries; this supersedes the earlier dummy Kozhikode location.
+- The map link searches the supplied address; an exact map pin has not been verified.
+
 ## Listings and contact
 
 - Each listing is a simple box containing an image or video, heading, description, optional price, and a WhatsApp button.
@@ -45,7 +52,9 @@ Every public page has a banner, menu, content section, WhatsApp contact, and foo
 - Use a clean, image-first, mobile-first catalog layout that prioritizes WhatsApp contact.
 - Use a white or off-white background, dark text, and orange as the primary brand accent, as confirmed by the user. Prices use the accent color; WhatsApp buttons retain recognizable green.
 - The supplied catalog screenshot is a visual reference for a soft neutral background, rounded panels and cards, subtle shadows, and generous spacing. Its car-rental content and controls are not project requirements.
-- Use an imagined temporary logo with the latest requested parent-brand spelling, `Kampuran Media`, until the original logo arrives. Earlier requirements use `Kampuram Media`; the business names retain their supplied spellings pending confirmation.
+- Use the supplied `assets/kampuram-logo.png` (Kampuram Digi World). It already has transparency. `kampuram-logo-trimmed.png` removes empty padding for header/footer use; `kampuram-symbol.png` and `favicon.png` derive from its globe mark. Preserve the supplied artwork and original file; do not replace it with the earlier temporary orange K. The site title/copy retains the previously requested company naming pending any explicit rename.
+- The homepage continues to use `kampuram-logo` for its main branding. Each business card in “Find what brings you here” uses its own supplied logo: `kampuram-ad-media-logo.png`, `kampuram-books.png`, and `cardskendra-logo.pdf` (exported to PNG). Preserve original artwork and colors; use a compact horizontal flex identity row in each card, pairing a contained logo badge with the business category and name. Match spacing and alignment across cards; avoid a separate full-width logo panel. Preserve responsive sizing. Keep source assets intact.
+- Motion: use one-time staggered scroll reveals, subtle card/image lifts, directional button arrows and press feedback. Respect `prefers-reduced-motion` (including live changes), keep content visible without JavaScript, and do not make entire cards clickable.
 - Keep the interface quiet so photos, advertisements, and book covers provide the color. Use generous spacing, rounded corners, and soft card shadows without heavy decoration.
 - Use a clean sans-serif for UI text. A serif accent for Cards Kendra and Kampuram Books headings is a proposed option.
 - Keep uploaded images visually consistent despite varying source quality through predictable media frames and suitable cropping.
@@ -56,7 +65,7 @@ Every public page has a banner, menu, content section, WhatsApp contact, and foo
 - Use a continuous white/off-white page background with no outer gradient, framed container, outer rounded corners, or decorative page shadow. Keep content centered with responsive side padding.
 - Sticky header: logo on the left, four page links on the right, and a hamburger menu on mobile.
 - Banners: plan responsive imagery with a separate mobile crop (for example, 4:3) or a controlled focal point and cover behavior. Avoid relying on a wide 1600x500 crop on phones. Use a dark gradient behind banner text for readability.
-- Home section order: hero banner, About, three business cards (image, one-line summary, link), why choose us (3 to 4 icons with short text), then contact with a map. About must cover company story, years of experience, location, and mission. Use the confirmed founder/writer and Kerala background; the user explicitly authorized dummy values for the demo: `15+ years` and `Kozhikode, Kerala`. These are illustrative, not verified facts; replace them with client-confirmed details before publication. Mission copy is a proposal for client review. Keep content short and scannable.
+- Home section order: hero banner, About, three business cards (image, one-line summary, link), why choose us (3 to 4 icons with short text), then contact with a map. About must cover company story, years of experience, location, and mission. Use the confirmed founder/writer and Kerala background; the user authorized `15+ years` as dummy experience for the demo; verify it before publication. The confirmed business location is Manjeri, Kerala (see contact details below). Mission copy is a proposal for client review. Keep content short and scannable.
 - Listing media: consistent aspect ratios, with 1:1 or 4:3 proposed for wedding cards and 3:4 for books. Use a one-line heading, descriptions clamped to 3 or 4 lines, optional accent-colored price, and a full-width WhatsApp button at the bottom.
 - Use recognizable WhatsApp green for contact buttons, plus a floating WhatsApp button at the bottom-right of every public page.
 - Kampuram Media filters use pill-style All / Images / Videos tabs. Videos show a poster and play icon, load on play, and never autoplay with sound.
