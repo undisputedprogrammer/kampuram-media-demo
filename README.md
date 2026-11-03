@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kampuran Media homepage demo
 
-## Getting Started
+A responsive client demonstration built with plain HTML, CSS and JavaScript. No build step or dependencies are required.
 
-First, run the development server:
+Open `index.html` directly, or serve this folder with `python -m http.server 8080` and visit http://localhost:8080.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Demo content
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- The orange K monogram and Kampuran Media wordmark are temporary. The latest requested spelling is used for the parent brand; the business names retain the earlier supplied spelling.
+- Photography is illustrative, not the company's actual work. The images are stored locally. Google Fonts are loaded online, with system sans-serif fallbacks.
+- Business navigation points to the three homepage cards. Only the homepage is implemented; public catalog pages and admin are future work.
+- Business buttons and WhatsApp buttons use the same contact handler. Set `WHATSAPP_NUMBER` in `script.js` to the real international phone number (digits only). Until configured, an accessible dialog explains the demo rather than contacting an invented number.
+- The location panel is a placeholder for the confirmed address and map. Social links are omitted until real account URLs are supplied.
+- Copy is proposed for design review and should be confirmed before publication. About follows the hero and covers the company story, experience, Kerala location, and a proposed mission. The user authorized dummy values: `15+ years` and `Kozhikode, Kerala`. Both must be replaced or verified before publication.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Image assets
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The current homepage uses three images generated with the built-in image generation tool and optimized to local JPEGs:
 
-## Learn More
+- `assets/writer-desk.jpg`: a Kerala-inspired writer’s desk for the hero.
+- `assets/advertising-creatives.jpg`: illustrative posters and a video-ad preview for Kampuram Media.
+- `assets/literary-books.jpg`: literary paperbacks with Kerala-inspired covers for Kampuram Books.
+- `assets/invitations.svg`: original wedding invitation illustration; names are illustrative.
 
-To learn more about Next.js, take a look at the following resources:
+These are demo images, not the founder’s actual desk, completed client campaigns, or books available for sale. The founder’s writing and literary background informed their direction. Exact generation prompts are recorded in `assets/image-prompts.json`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Earlier Unsplash samples remain unused in the assets folder: `creative-studio.jpg` (photo-1497215728101-856f4ea42174), `media.jpg` (photo-1541462608143-67571c6738dd), and `books.jpg` (photo-1512820790803-83ca734da794).

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+ <defs>
+  <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#d5b7a5"/><stop offset="1" stop-color="#ead9cb"/></linearGradient>
+  <linearGradient id="paper" x2="1" y2="1"><stop stop-color="#fffcf4"/><stop offset="1" stop-color="#eee5d5"/></linearGradient>
+  <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="2" dy="14" stdDeviation="15" flood-color="#624635" flood-opacity=".23"/></filter>
+  <g id="branch" fill="none" stroke="#a99160" stroke-width="1.4"><path d="M0 120Q-15 55 15 0M0 100Q-42 76-22 59Q-1 67 0 100M-1 75Q26 63 24 41Q5 43-1 75M3 48Q-21 30-12 15Q7 25 3 48M11 17Q27 12 22-4Q12 0 11 17"/></g>
+ </defs>
+ <path fill="url(#bg)" d="M0 0h900v600H0z"/>
+ <path d="M0 470Q380 330 900 420v180H0" fill="#f3e6d8" opacity=".4"/>
+ <g transform="translate(217 96) rotate(-13 185 205)" filter="url(#shadow)"><rect width="365" height="440" rx="4" fill="#b7816d"/><path d="m0 0 182 235L365 0" fill="#c18e79"/><path d="m0 440 182-210 183 210" fill="#c99580"/><circle cx="182" cy="235" r="26" fill="#b48656"/><path d="m173 235 6 7 12-15" stroke="#ead3ac" stroke-width="2" fill="none"/></g>
+ <g transform="translate(399 61) rotate(12 165 230)" filter="url(#shadow)">
+  <rect width="330" height="455" rx="3" fill="url(#paper)"/>
+  <rect x="19" y="19" width="292" height="417" rx="135" fill="none" stroke="#b8a374" stroke-width="1"/>
+  <use href="#branch" transform="translate(52 50) rotate(-20)"/><use href="#branch" transform="translate(281 401) rotate(160)"/>
+  <g text-anchor="middle" fill="#766345"><text x="165" y="116" font-family="Georgia,serif" font-size="10" letter-spacing="3">TOGETHER WITH OUR FAMILIES</text><text x="165" y="194" font-family="Georgia,serif" font-size="43" font-style="italic">Ananya</text><text x="165" y="232" font-family="Georgia,serif" font-size="21">&amp;</text><text x="165" y="282" font-family="Georgia,serif" font-size="43" font-style="italic">Rahul</text><text x="165" y="327" font-family="Georgia,serif" font-size="9" letter-spacing="2">INVITE YOU TO CELEBRATE</text><text x="165" y="347" font-family="Georgia,serif" font-size="9" letter-spacing="2">THEIR WEDDING</text><path d="M135 369h60" stroke="#b8a374"/><text x="165" y="395" font-family="Georgia,serif" font-size="11" letter-spacing="2">A BEAUTIFUL BEGINNING</text></g>
+ </g>
+ <use href="#branch" transform="translate(80 490) rotate(-35) scale(2.4)" opacity=".7"/>
+</svg>
