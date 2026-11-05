@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "whatsappNumber": "919388002975",
+  "listingPageSize": 12,
+  "sections": {
+    "media": { "label": "Kampuram Media", "aspectRatio": "4:3", "allowVideo": true },
+    "cards": { "label": "Cards Kendra", "aspectRatio": "1:1", "allowVideo": false },
+    "books": { "label": "Kampuram Books", "aspectRatio": "3:4", "allowVideo": false }
+  },
+  "uploadLimits": {
+    "imageMaxBytes": 5242880,
+    "videoMaxBytes": 20971520,
+    "imageMimeTypes": ["image/jpeg", "image/png", "image/webp"],
+    "videoMimeTypes": ["video/mp4", "video/webm"]
+  }
+}

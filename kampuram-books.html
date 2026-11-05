@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ed6a2f">
+  <meta name="description" content="Explore publications, titles and new releases at Kampuram Books, Manjeri. Browse the book catalogue and enquire on WhatsApp.">
+  <title>Kampuram Books | Publications & New Releases</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="kampuram-media.css">
+  <link rel="stylesheet" href="kampuram-books.css">
+  <script src="catalogue-data.js" defer></script>
+  <script src="catalogue-utils.js" defer></script>
+  <script src="kampuram-media.js" defer></script>
+</head>
+<body class="books-page" data-catalogue-section="books">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="whatsapp" viewBox="0 0 24 24"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.4-4.8a8.5 8.5 0 1 1 16.1-4.1Z"/><path d="M8.4 7.7c-.6.2-.8 1-.6 1.8.6 2.4 2.5 4.4 5 5.3.8.3 1.7.2 2.1-.4l.5-.9-2.3-1.1-.8.8c-1.1-.5-2-1.4-2.5-2.5l.6-.8-1-2.2Z"/></symbol>
+    <symbol id="spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"/></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M20.3 5.7a5 5 0 0 0-7.1 0L12 6.9l-1.2-1.2a5 5 0 0 0-7.1 7.1L12 21l8.3-8.2a5 5 0 0 0 0-7.1Z"/></symbol>
+    <symbol id="chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-2 2V11.5a9.5 9.5 0 0 1 19 0Z"/><path d="M7 11h9M7 15h5"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  </svg>
+
+  <div class="site-shell" id="top">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Kampuran Media home"><img src="assets/kampuram-books.png" width="937" height="527" alt="Kampuram Books logo"></a>
+      <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="kampuram-media.html">Kampuram Media</a><a href="cards-kendra.html">Cards Kendra</a><a href="kampuram-books.html" class="nav-home" aria-current="page">Kampuram Books</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="header-contact" href="contact.html">Let’s talk <svg><use href="#arrow"/></svg></a>
+    </header>
+
+    <main id="main">
+      <section class="hero ads-hero" aria-labelledby="ads-title">
+        <img class="hero-photo" src="assets/literary-books.jpg" alt="Illustrative literary paperbacks and an open book on a warm wooden reading table" width="1536" height="1024" fetchpriority="high">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <span class="eyebrow hero-eyebrow"><span></span> READ &amp; DISCOVER · MANJERI</span>
+          <h1 id="ads-title">Kampuram <em>Books</em></h1>
+          <p>Publications, titles and new releases</p>
+        </div>
+        <div class="ads-brand-stamp"><img src="assets/kampuram-books.png" width="937" height="527" alt="Kampuram Books logo"></div>
+        <span class="ads-hero-caption">A NEW PERSPECTIVE ON EVERY PAGE.</span>
+      </section>
+
+      <section class="catalogue-section" id="books" aria-labelledby="catalogue-title">
+        <div class="section-heading catalogue-heading"><div><span class="eyebrow">FOR THE LOVE OF STORIES</span><h2 id="catalogue-title">Find your next chapter.</h2></div><p>Stories to linger over. Ideas to take with you. <br>Find a little inspiration between the covers.</p></div>
+        <div class="catalogue-toolbar">
+          <form class="catalogue-search" role="search" aria-label="Search books">
+            <label class="visually-hidden" for="book-search">Search books</label>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg>
+            <input id="book-search" type="search" name="q" placeholder="Search books…" maxlength="150" autocomplete="off" aria-controls="listing-grid">
+            <button class="search-clear" id="clear-search" type="button" aria-label="Clear search" hidden>×</button>
+          </form>
+          <span class="collection-note"><span class="little-dot"></span> Stories, poetry and a little discovery.</span>
+        </div>
+        <p class="results-count catalogue-status" id="results-count" role="status" aria-live="polite">Loading books…</p>
+        <div class="listing-grid" id="listing-grid" aria-busy="true"></div>
+        <div class="catalogue-empty" id="catalogue-empty" hidden><span class="empty-icon"><svg aria-hidden="true"><use href="#spark"/></svg></span><h3 id="empty-title">No books yet</h3><p>More stories are on the way. Come back soon to discover your next read.</p><button class="button button-orange" id="reset-filter">View all books <svg aria-hidden="true"><use href="#arrow"/></svg></button></div>
+        <div class="load-more-row"><button class="button load-more" id="load-more" hidden>Load more <svg aria-hidden="true"><use href="#arrow"/></svg></button><p class="catalogue-end" id="catalogue-end"></p></div>
+        <p class="sample-note"><span class="little-dot"></span> Illustrative sample titles, covers and prices for this design preview; not actual book stock.</p>
+        <noscript><p class="noscript-message">Enable JavaScript to browse and search books. You can still contact us using the phone number below.</p></noscript>
+      </section>
+      <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="contact-copy"><span class="eyebrow">LET’S TALK BOOKS</span><h2 id="contact-title">Looking for your<br>next good read?</h2><p>Ask about a title, availability or a reading recommendation. <br>We’d love to help you find your next book.</p><button class="button button-whatsapp" data-whatsapp="Hi, I would like to know more about Kampuram Books."><svg><use href="#whatsapp"/></svg> Chat on WhatsApp <svg><use href="#arrow"/></svg></button><span class="contact-small">A good conversation is a great place to start.</span></div><div class="location-card"><span class="location-icon"><svg aria-hidden="true"><use href="#pin"/></svg></span><h3>Visit us in Manjeri.</h3><address class="business-address">Madari Tower, Near Civil Station<br>Kacherippadi, Manjeri – 676121<br>Malappuram District, Kerala, India</address><a class="contact-phone" href="tel:+919388002975">+91 93880 02975</a><a class="text-link location-directions" href="https://www.google.com/maps/search/?api=1&amp;query=Madari%20Tower%2C%20Near%20Civil%20Station%2C%20Kacherippadi%2C%20Manjeri%20676121%2C%20Malappuram%2C%20Kerala%2C%20India" target="_blank" rel="noopener noreferrer">Find us on Google Maps <svg aria-hidden="true"><use href="#arrow"/></svg></a></div></section>
+    </main>
+
+    <footer><div class="footer-top"><a class="brand" href="index.html"><img src="assets/kampuram-books.png" width="937" height="527" alt="Kampuram Books logo"></a><p>A good book. A new perspective.</p><a href="#top" class="back-top">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="year">2026</span> Kampuran Media. All rights reserved.</span><nav aria-label="Footer navigation"><a href="kampuram-media.html">Media</a><a href="cards-kendra.html">Cards Kendra</a><a href="kampuram-books.html">Books</a><a href="contact.html">Contact</a></nav><span class="demo-label">DESIGN PREVIEW</span></div></footer>
+  </div>
+  <button class="floating-whatsapp" data-whatsapp="Hi, I would like to know more about Kampuram Books." aria-label="Chat on WhatsApp"><svg><use href="#whatsapp"/></svg><span>Let’s chat</span></button>
+</body>
+</html>

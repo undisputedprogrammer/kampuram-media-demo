@@ -1,0 +1,1 @@
+Six original SVG cover designs made for the catalogue demo. Titles, descriptions, cover artwork and prices are fictional. They do not represent Kampuram publications, actual authors or available stock. Native vector sizes are 900 × 1200 (3:4). Replace with real cover photographs and approved metadata before launch. Production uploads remain JPG/PNG/WebP.

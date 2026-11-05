@@ -1,0 +1,100 @@
+/* Contact shares the company's typography, colour and motion foundations. */
+.contact-hero { height: 335px; }
+.contact-hero .hero-content { padding: 43px 45px; }
+.contact-hero .hero-shade { background: linear-gradient(90deg, #26352bf2, #344033c9 48%, #27362a30); }
+.contact-hero .hero-photo { object-position: 70% 56%; }
+.contact-hero h1 { font-size: 49px; }
+.contact-hero .hero-content p { margin-top: 16px; font-size: 13px; }
+.contact-hero .hero-eyebrow { font-size: 8px; margin-bottom: 17px; }
+.contact-hero-caption { position: absolute; bottom: 20px; left: 45px; font-size: 7px; letter-spacing: 1.6px; color: #e0ddc9; }
+.reach-section { display: grid; grid-template-columns: 1fr 1fr; gap: 85px; padding: 58px 0 52px; align-items: start; }
+.reach-copy h2 { font-size: 38px; }
+.reach-intro { max-width: 420px; font-size: 13px; line-height: 1.9; margin-top: 17px; }
+.contact-methods { display: grid; gap: 13px; margin-top: 27px; }
+.contact-method { display: flex; align-items: center; gap: 17px; border: 1px solid var(--line); background: #fff; border-radius: 14px; padding: 19px 20px; transition: transform .25s, box-shadow .25s, border-color .25s; }
+.method-icon { width: 43px; height: 43px; border-radius: 13px; display: grid; place-items: center; background: #fff0e4; color: var(--orange-dark); flex-shrink: 0; }
+.whatsapp-method .method-icon { background: #e9f4eb; color: var(--green); }
+.method-copy { display: flex; flex-direction: column; gap: 2px; }
+.method-label { font-size: 8px; letter-spacing: 1.3px; color: #8a7b6a; }
+.method-copy strong { font-family: Manrope, sans-serif; font-size: 16px; font-weight: 650; letter-spacing: -.4px; }
+.method-copy > span:last-child { font-size: 11px; color: var(--muted); }
+.method-arrow { width: 17px; height: 17px; margin-left: auto; color: var(--orange-dark); }
+.visit-panel { position: relative; isolation: isolate; overflow: hidden; border: 1px solid #e7e0d4; border-radius: 20px; background: #f5f1e9; padding: 34px 36px; }
+.visit-panel:before { z-index: -1; content: ''; position: absolute; width: 190px; height: 190px; border: 1px solid #e9dfd0; border-radius: 50%; right: -120px; top: -75px; box-shadow: 0 0 0 25px #f5f1e9, 0 0 0 26px #e9dfd0, 0 0 0 51px #f5f1e9, 0 0 0 52px #e9dfd0; pointer-events: none; }
+.visit-header { display: flex; align-items: center; gap: 12px; position: relative; }
+.visit-header .location-icon, .visit-header .eyebrow { margin-bottom: 0; }
+.visit-header .eyebrow { font-size: 8px; letter-spacing: 1.5px; }
+.visit-panel h2 { font-size: 29px; margin-top: 22px; }
+.visit-intro { font-size: 12px; margin-top: 10px; }
+.visit-panel address { display: flex; flex-direction: column; font-style: normal; font-size: 13px; line-height: 1.95; margin-top: 23px; color: #796f62; }
+.visit-panel address strong { color: var(--ink); font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+.visit-landmark { display: flex; align-items: center; gap: 8px; font-size: 7px; letter-spacing: 1.2px; padding: 17px 0 22px; }
+.directions-button { font-size: 11px; width: 100%; gap: 12px; padding: 13px 16px; }
+.directions-button svg { margin-left: auto; }
+.directions-note { display: block; font-size: 9px; margin-top: 10px; color: #938879; }
+.contact-businesses { padding: 35px 0 12px; border-top: 1px solid var(--line); }
+.contact-businesses h2 { font-size: 28px; }
+.contact-business-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.contact-business-links > a { display: flex; align-items: center; gap: 13px; padding: 19px 17px; border: 1px solid var(--line); border-radius: 13px; background: #fff; transition: border-color .25s, transform .25s; }
+.business-link-logo { flex: 0 0 46px; height: 46px; display: grid; place-items: center; }
+.business-link-logo img { width: 100%; height: 100%; object-fit: contain; border-radius: 4px; }
+.contact-business-links strong { display: block; font-family: Manrope, sans-serif; font-size: 13px; font-weight: 650; letter-spacing: -.3px; }
+.contact-business-links small { display: block; font-size: 10px; color: var(--muted); margin-top: 2px; }
+.contact-business-links svg { width: 16px; margin-left: auto; color: var(--orange-dark); }
+@media (hover: hover) and (pointer: fine) {
+ .contact-method:hover { transform: translateY(-3px); border-color: #e5c9b2; box-shadow: 0 10px 25px #6743260a; }
+ .contact-business-links > a:hover { transform: translateY(-3px); border-color: #e5c9b2; }
+}
+@media (max-width: 1100px) {
+ .reach-section { gap: 35px; }
+ .visit-panel { padding: 29px; }
+ .contact-business-links { gap: 12px; }
+ .contact-business-links > a { padding: 16px 12px; gap: 10px; }
+ .business-link-logo { flex-basis: 37px; height: 40px; }
+ .contact-business-links strong { font-size: 12px; }
+}
+@media (max-width: 800px) and (min-width: 701px) {
+ .reach-section { gap: 25px; }
+ .visit-panel { padding: 24px; }
+ .method-copy strong { font-size: 14px; }
+ .contact-method { padding: 16px 13px; gap: 10px; }
+ .contact-business-links > a { flex-wrap: wrap; }
+ .contact-business-links > a > span:nth-child(2) { order: 3; flex-basis: 100%; }
+}
+@media (max-width: 700px) {
+ .contact-hero { height: 350px; }
+ .contact-hero .hero-content { padding: 38px 24px; }
+ .contact-hero .hero-eyebrow { font-size: 6px; letter-spacing: 1.1px; max-width: 230px; }
+ .contact-hero h1 { font-size: 38px; }
+ .contact-hero .hero-content p { font-size: 12px; }
+ .contact-hero-caption { left: 24px; font-size: 6px; letter-spacing: 1px; max-width: 230px; }
+ .reach-section { grid-template-columns: 1fr; gap: 30px; padding: 36px 0; }
+ .reach-copy h2 { font-size: 30px; }
+ .reach-copy h2 br { display: none; }
+ .reach-intro { font-size: 12px; margin-top: 14px; }
+ .contact-methods { margin-top: 22px; }
+ .contact-method { padding: 17px 16px; gap: 12px; }
+ .method-copy strong { font-size: 15px; }
+ .method-copy > span:last-child { font-size: 10px; }
+ .method-icon { width: 37px; height: 40px; }
+ .visit-panel { padding: 26px 23px; }
+ .visit-panel h2 { font-size: 27px; }
+ .visit-panel address { font-size: 12px; }
+ .contact-businesses { padding-top: 30px; }
+ .contact-businesses h2 { font-size: 26px; }
+ .contact-business-links { grid-template-columns: 1fr; }
+ .contact-business-links > a { padding: 16px 19px; gap: 16px; }
+ .contact-business-links strong { font-size: 14px; }
+}
+@media (max-width: 370px) {
+ .contact-hero .hero-content { padding: 34px 20px; }
+ .contact-hero h1 { font-size: 34px; }
+ .method-copy strong { font-size: 13px; }
+ .contact-method { padding: 15px 12px; gap: 10px; }
+ .method-copy > span:last-child { font-size: 9px; }
+ .directions-button { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .contact-method, .contact-business-links > a { transition: none; }
+ .contact-method:hover, .contact-business-links > a:hover { transform: none; }
+}

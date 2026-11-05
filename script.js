@@ -48,7 +48,7 @@ document.querySelectorAll('[data-business]').forEach(button => {
 document.querySelectorAll('.dialog-close, .dialog-done').forEach(button => {
   button.addEventListener('click', () => dialog.close());
 });
-dialog.addEventListener('click', event => {
+dialog?.addEventListener('click', event => {
   const bounds = dialog.getBoundingClientRect();
   if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
 });

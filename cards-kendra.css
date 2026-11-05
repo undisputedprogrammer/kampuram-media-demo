@@ -1,0 +1,35 @@
+/* Cards Kendra keeps the shared orange catalogue theme and its own pink identity. */
+.cards-page .site-header .brand img { width: auto; height: 72px; max-width: 150px; object-fit: contain; border-radius: 7px; }
+.cards-page .footer-top .brand img { width: auto; height: 65px; max-width: 140px; object-fit: contain; border-radius: 7px; }
+.cards-page .ads-hero .hero-photo { object-position: 75% 50%; }
+.cards-page .ads-hero .hero-shade { background: linear-gradient(90deg, #412e28ed 0%, #533e31ce 40%, #624a3329 80%); }
+.cards-page .ads-hero h1 { font-size: 57px; letter-spacing: -2px; }
+.cards-page .ads-hero .hero-content { padding-top: 63px; }
+.cards-page .ads-hero .hero-content p { max-width: 380px; }
+.cards-page .ads-brand-stamp { padding: 5px; width: 102px; border-radius: 10px; }
+.cards-page .ads-brand-stamp img { border-radius: 6px; }
+.collection-note { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; color: #928477; }
+.cards-page .skeleton-media { aspect-ratio: 1; }
+.cards-page .listing-media { background: #f2e9df; }
+.cards-page .listing-type { font-size: 6px; letter-spacing: .8px; }
+.cards-page .listing-heading { font-size: 16px; }
+.cards-page .contact-copy h2 { font-size: 31px; }
+@media (max-width: 950px) and (min-width: 701px) {
+  .cards-page .listing-heading { font-size: 18px; }
+}
+@media (max-width: 700px) {
+  .cards-page .site-header .brand img { height: 57px; max-width: 125px; }
+  .cards-page .footer-top .brand img { height: 57px; max-width: 125px; }
+  .cards-page .ads-hero h1 { font-size: 43px; letter-spacing: -1.6px; }
+  .cards-page .ads-hero .hero-content { padding-top: 44px; }
+  .cards-page .ads-hero .hero-content p { max-width: 230px; }
+  .cards-page .ads-hero .hero-photo { object-position: 65% center; }
+  .cards-page .ads-hero .hero-shade { background: linear-gradient(90deg, #412e28e6, #533e317e); }
+  .cards-page .ads-brand-stamp { width: 77px; }
+  .cards-page .listing-heading { font-size: 19px; }
+  .cards-page .collection-note { font-size: 9px; }
+  .cards-page .contact-copy h2 { font-size: 27px; }
+}
+@media (max-width: 370px) {
+  .cards-page .ads-hero h1 { font-size: 36px; }
+}

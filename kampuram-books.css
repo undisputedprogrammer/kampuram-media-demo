@@ -1,0 +1,30 @@
+/* Page-specific branding over the shared catalogue theme. */
+.books-page .site-header .brand img { width: 136px; height: auto; max-height: 76px; object-fit: contain; border-radius: 6px; }
+.books-page .footer-top .brand img { width: 125px; height: auto; border-radius: 6px; }
+.books-page .ads-hero .hero-photo { object-position: right 55%; }
+.books-page .ads-hero .hero-shade { background: linear-gradient(90deg, #252c36f2 0%, #343b40d9 40%, #292b3633 85%); }
+.books-page .ads-hero h1 { font-size: 54px; letter-spacing: -2px; }
+.books-page .ads-hero .hero-content { padding-top: 60px; }
+.books-page .ads-brand-stamp { width: 126px; padding: 6px; background: #f9f6eb; }
+.books-page .ads-brand-stamp img { border-radius: 5px; }
+.books-page .skeleton-media { aspect-ratio: 3 / 4; }
+.books-page .listing-media { background: #eae1d3; }
+.books-page .listing-type { font-size: 7px; }
+.books-page .listing-heading { font-size: 16px; }
+.collection-note { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; color: #928477; }
+@media (min-width: 701px) and (max-width: 1100px) { .books-page .listing-heading { font-size: 18px; } }
+@media (max-width: 700px) {
+ .books-page .site-header .brand img { width: 112px; max-height: 62px; }
+ .books-page .footer-top .brand img { width: 112px; }
+ .books-page .ads-hero h1 { font-size: 38px; letter-spacing: -1.5px; }
+ .books-page .ads-hero .hero-content { padding-top: 42px; }
+ .books-page .ads-hero .hero-photo { object-position: 65% center; }
+ .books-page .ads-hero .hero-shade { background: linear-gradient(90deg, #252c36ed, #343b40b8); }
+ .books-page .ads-brand-stamp { width: 96px; }
+ .books-page .listing-heading { font-size: 19px; }
+ .books-page .collection-note { font-size: 9px; }
+}
+@media (max-width: 370px) {
+ .books-page .ads-hero h1 { font-size: 32px; }
+ .books-page .ads-hero-caption { max-width: 110px; line-height: 1.6; }
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Kampuram catalogue listings",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "listings"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "listings": { "type": "array", "items": { "$ref": "#/$defs/listing" } }
+  },
+  "$defs": {
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "originalName", "mimeType", "sizeBytes"],
+      "properties": {
+        "path": { "type": "string", "pattern": "^assets/", "description": "Site-root-relative managed asset path." },
+        "originalName": { "type": "string", "minLength": 1 },
+        "mimeType": { "enum": ["image/jpeg", "image/png", "image/webp", "video/mp4", "video/webm"] },
+        "sizeBytes": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "listing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "section", "type", "heading", "description", "price", "file", "thumbnail", "alt", "displayOrder", "status", "dateAdded", "updatedAt", "isSample"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+        "section": { "enum": ["media", "cards", "books"] },
+        "type": { "enum": ["image", "video"] },
+        "heading": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "price": { "type": ["number", "null"], "minimum": 0, "multipleOf": 0.01, "description": "Optional rupee amount only, such as 6000. Display as ₹ 6000/-. Null means absent; do not store currency symbols or units." },
+        "file": { "$ref": "#/$defs/asset" },
+        "thumbnail": { "anyOf": [{ "$ref": "#/$defs/asset" }, { "type": "null" }] },
+        "alt": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "displayOrder": { "type": "integer", "minimum": 0 },
+        "status": { "enum": ["published", "hidden"] },
+        "dateAdded": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "isSample": { "type": "boolean" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "section": { "enum": ["cards", "books"] } } },
+          "then": { "properties": { "type": { "const": "image" } } }
+        },
+        {
+          "if": { "properties": { "type": { "const": "image" } } },
+          "then": {
+            "properties": {
+              "file": { "properties": { "mimeType": { "enum": ["image/jpeg", "image/png", "image/webp"] }, "sizeBytes": { "maximum": 5242880 } } },
+              "thumbnail": { "type": "null" }
+            }
+          },
+          "else": {
+            "properties": {
+              "file": { "properties": { "mimeType": { "enum": ["video/mp4", "video/webm"] }, "sizeBytes": { "maximum": 20971520 } } },
+              "thumbnail": {
+                "allOf": [
+                  { "$ref": "#/$defs/asset" },
+                  { "properties": { "mimeType": { "enum": ["image/jpeg", "image/png", "image/webp"] }, "sizeBytes": { "maximum": 5242880 } } }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
