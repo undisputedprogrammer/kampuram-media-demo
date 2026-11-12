@@ -98,3 +98,15 @@
  .contact-method, .contact-business-links > a { transition: none; }
  .contact-method:hover, .contact-business-links > a:hover { transform: none; }
 }
+.contact-page .contact-business-links {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.contact-page .visit-panel address {
+  margin-bottom: 20px;
+}
+.contact-page .reach-section {
+  align-items: center;
+}
+@media (max-width: 700px) {
+  .contact-page .contact-business-links { grid-template-columns: 1fr; }
+}

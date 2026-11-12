@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Sample brochure and visiting cards">
+  <rect width="800" height="600" fill="#e9e2d6"/>
+  <g transform="translate(100 70) rotate(-8 200 220)">
+    <rect x="12" y="14" width="340" height="440" rx="4" fill="#b4a998" opacity=".3"/>
+    <rect width="340" height="440" rx="4" fill="#fffaf0"/>
+    <rect width="120" height="440" fill="#244638"/>
+    <path d="M24 330c70-120 100-140 190-150M24 355c70-120 100-140 190-150" fill="none" stroke="#e9b55d" stroke-width="2"/>
+    <text x="146" y="54" font-family="Arial,sans-serif" font-size="11" fill="#244638" letter-spacing="2">BROCHURE</text>
+    <text x="146" y="132" font-family="Georgia,serif" font-size="33" fill="#244638">A place</text>
+    <text x="146" y="174" font-family="Georgia,serif" font-size="33" fill="#244638">to pause.</text>
+    <circle cx="231" cy="272" r="63" fill="#c6643c"/>
+    <path d="M198 285q33-62 66 0M198 300h66" fill="none" stroke="#fffaf0" stroke-width="3"/>
+    <path d="M146 380h155M146 394h122M146 408h142" stroke="#244638" stroke-width="3" opacity=".4"/>
+  </g>
+  <g transform="translate(410 240) rotate(9 140 90)">
+    <rect x="10" y="12" width="295" height="180" rx="5" fill="#b4a998" opacity=".35"/>
+    <rect width="295" height="180" rx="5" fill="#c6643c"/>
+    <text x="26" y="63" font-family="Georgia,serif" font-size="32" fill="#fffaf0">Courtyard</text>
+    <text x="28" y="87" font-family="Arial,sans-serif" font-size="10" letter-spacing="4" fill="#fffaf0">CAFÉ &amp; KITCHEN</text>
+    <path d="M28 117h239" stroke="#fffaf0" opacity=".5"/>
+    <text x="28" y="148" font-family="Arial,sans-serif" font-size="11" fill="#fffaf0">VISITING CARD · SAMPLE DESIGN</text>
+  </g>
+  <path d="M50 552h700" stroke="#244638" opacity=".25"/>
+  <text x="50" y="577" font-family="Arial,sans-serif" font-size="10" fill="#244638" letter-spacing="2">KAMPURAM DIGI WORLD · ILLUSTRATIVE PRINT DESIGN</text>
+</svg>

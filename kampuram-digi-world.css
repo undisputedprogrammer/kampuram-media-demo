@@ -1,0 +1,128 @@
+.digi-hero {
+  height: clamp(320px, 34vw, 390px);
+}
+.digi-hero .hero-photo {
+  object-position: 68% 58%;
+}
+.digi-hero .hero-shade {
+  background: linear-gradient(90deg, #202b26f5 0%, #202b26d9 40%, #202b2626 100%);
+}
+.digi-hero .hero-content {
+  max-width: 630px;
+}
+.digi-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.digi-service {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+}
+.digi-service h3 {
+  font-size: 19px;
+  line-height: 1.3;
+  letter-spacing: -.4px;
+}
+.digi-service p {
+  font-size: 13px;
+}
+.digi-service .button {
+  margin-top: auto;
+  padding: 10px 12px;
+  gap: 8px;
+}
+.digi-service .button svg:last-child {
+  margin-left: 0;
+}
+.digi-contact {
+  margin-top: 54px;
+  align-items: start;
+}
+.digi-details {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 20px;
+  row-gap: 10px;
+  margin: 20px 0 0;
+  font-size: 13px;
+}
+.digi-details dt {
+  font-weight: 700;
+}
+.digi-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.digi-details a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.digi-details a:hover {
+  color: var(--orange-dark);
+}
+@media (max-width: 950px) {
+  .digi-service { padding: 19px; }
+  .digi-service h3 { font-size: 17px; }
+}
+@media (max-width: 700px) {
+  .digi-hero .hero-shade { background: linear-gradient(90deg, #202b26f2, #202b268a); }
+  .digi-service-grid { grid-template-columns: 1fr; gap: 14px; }
+  .digi-service .button { margin-top: 4px; }
+  .digi-contact { margin-top: 34px; }
+  .digi-details { column-gap: 12px; }
+}
+
+/* Service imagery, sample work and enquiry guidance. */
+.digi-hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; }
+.digi-hero-link { font-size: 12px; text-decoration: underline; text-underline-offset: 5px; }
+.digi-hero .hero-content { max-width: 750px; }
+.digi-service { overflow: hidden; padding: 16px 20px 22px; gap: 14px; }
+.digi-service-image { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; margin-bottom: 6px; }
+.service-formats { list-style: none; margin: 0 0 6px; padding: 0; width: 100%; color: #5f5b54; font-size: 12px; }
+.service-formats li { border-top: 1px solid var(--line); padding: 7px 0; }
+.digi-service .button { width: 100%; font-size: 11px; }
+.digi-work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.work-example { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.work-example > img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.work-example figcaption { padding: 22px 26px; }
+.work-example h3 { font-size: 20px; letter-spacing: -.4px; line-height: 1.4; }
+.work-example p { font-size: 13px; margin-top: 10px; }
+.motion-example { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr 1fr; background: #f3f0e8; align-items: center; }
+.motion-player { background: #182b23; }
+.motion-player video { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; }
+.motion-example figcaption { padding: 40px; }
+.motion-example h3 { font-size: 28px; }
+.digi-brief { display: grid; grid-template-columns: 1fr 1.15fr; gap: 70px; margin-top: 62px; padding: 42px; background: #f6eee3; border-radius: 18px; }
+.brief-copy > p { font-size: 14px; margin: 20px 0 24px; }
+.brief-checklist article + article { border-top: 1px solid #e2d7c8; margin-top: 20px; padding-top: 20px; }
+.brief-checklist h3 { font-size: 17px; margin-bottom: 8px; }
+.brief-checklist p { font-size: 13px; }
+.digi-faq { display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; }
+.faq-list details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+.faq-list details:first-child { padding-top: 4px; }
+.faq-list summary { cursor: pointer; font-size: 15px; font-weight: 600; padding: 5px 4px; }
+.faq-list details[open] summary { color: var(--orange-dark); }
+.faq-list details p { font-size: 13px; padding: 12px 4px 4px; }
+@media (max-width: 950px) {
+  .digi-service { padding: 12px 14px 18px; }
+  .digi-brief { gap: 30px; padding: 30px; }
+  .motion-example figcaption { padding: 26px; }
+}
+@media (max-width: 700px) {
+  .digi-hero { height: auto; min-height: 370px; }
+  .digi-hero-actions { gap: 14px; }
+  .digi-work-grid, .motion-example, .digi-brief, .digi-faq { grid-template-columns: 1fr; }
+  .digi-service { padding: 16px; }
+  .digi-service-image { aspect-ratio: 3 / 2; }
+  .digi-brief { margin-top: 38px; padding: 26px 22px; gap: 32px; }
+  .digi-faq { gap: 22px; }
+  .motion-example h3 { font-size: 24px; }
+  .work-example figcaption { padding: 22px; }
+}

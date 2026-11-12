@@ -6,7 +6,6 @@
   const results = document.querySelector('#results-count');
   const empty = document.querySelector('#catalogue-empty');
   const more = document.querySelector('#load-more');
-  const end = document.querySelector('#catalogue-end');
   const searchInput = document.querySelector('.catalogue-search input[type="search"]');
   const clearSearch = document.querySelector('#clear-search');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -58,7 +57,7 @@
 
   function assetUrl(path) { return new URL(path, new URL('.', location.href)).href; }
 
-  function playVideo(media, item, poster, trigger, badge) {
+  function playVideo(media, item, poster, trigger) {
     const video = node('video');
     video.controls = true;
     video.playsInline = true;
@@ -70,7 +69,6 @@
     // This is the only point at which a video file is attached to the page.
     video.src = assetUrl(item.file.path);
     trigger.remove();
-    badge.remove();
     media.append(video);
     video.focus();
     video.addEventListener('play', () => {
@@ -82,7 +80,7 @@
       error.append(node('p', '', 'This video couldn’t load. Please try again.'));
       const retry = node('button', '', 'Try again');
       retry.type = 'button';
-      retry.addEventListener('click', () => { error.remove(); media.append(trigger, badge); trigger.focus(); });
+      retry.addEventListener('click', () => { error.remove(); media.append(trigger); trigger.focus(); });
       error.append(retry);
       media.append(error);
     }, { once: true });
@@ -110,9 +108,7 @@
       const fallback = node('div', 'media-fallback', 'Preview unavailable');
       media.prepend(fallback);
     }, { once: true });
-    const badge = node('span', 'listing-type');
-    badge.append(node('span', 'type-dot'), document.createTextNode(isVideo ? 'VIDEO' : section === 'cards' ? 'INVITATION' : section === 'books' ? 'BOOK' : 'IMAGE'));
-    media.append(image, badge);
+    media.append(image);
     if (isVideo) {
       const trigger = node('button', 'video-trigger');
       trigger.type = 'button';
@@ -126,7 +122,7 @@
       play.append(path);
       disc.append(play);
       trigger.append(disc, node('span', 'play-label', 'PLAY FILM'));
-      trigger.addEventListener('click', () => playVideo(media, item, poster, trigger, badge));
+      trigger.addEventListener('click', () => playVideo(media, item, poster, trigger));
       media.append(trigger);
     }
     const body = node('div', 'listing-body');
@@ -175,14 +171,15 @@
     empty.hidden = matching.length > 0;
     grid.hidden = matching.length === 0;
     document.querySelector('#empty-title').textContent = query.trim() ? `No matching ${listingLabel}` : filter === 'videos' ? 'No videos yet' : filter === 'images' ? 'No images yet' : `No ${listingLabel} yet`;
-    empty.querySelector('p').textContent = query.trim() ? 'Try a different word, or clear your search and explore all our work.' : 'There’s more creativity on the way. Take a look at our other work.';
-    document.querySelector('#reset-filter').firstChild.textContent = query.trim() ? 'Clear search & view all ' : section === 'cards' ? 'View all invitations ' : section === 'books' ? 'View all books ' : 'View all work ';
+    empty.querySelector('p').textContent = query.trim() ? 'Try a different search term or clear your search.' : '';
+    const reset = document.querySelector('#reset-filter');
+    reset.hidden = !query.trim() && filter === 'all';
+    reset.firstChild.textContent = query.trim() ? 'Clear search & view all ' : 'View all advertisements ';
     clearSearch.hidden = !searchInput.value;
     document.querySelectorAll('[data-count]').forEach(element => {
       element.textContent = String(utils.selectListings(seed.listings, section, element.dataset.count, query).length);
     });
     more.hidden = shown >= matching.length;
-    end.textContent = matching.length && more.hidden ? 'You’ve seen all our ' + pluralKind + '.' : '';
     document.querySelectorAll('[data-filter]').forEach(button => {
       const active = button.dataset.filter === filter;
       button.classList.toggle('is-active', active);

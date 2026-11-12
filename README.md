@@ -1,4 +1,4 @@
-# Kampuram Media catalogue demo
+# Kampuram Business Group website
 
 A responsive client demonstration built with plain HTML, CSS and JavaScript. No build step or dependencies are required.
 
@@ -6,12 +6,12 @@ Open `index.html` directly, or serve this folder with `python -m http.server 808
 
 ## Demo content
 
-- The supplied transparent `assets/kampuram-logo.png` is used for branding, with padding trimmed in `kampuram-logo-trimmed.png`. The globe is exported as `kampuram-symbol.png` for the About artwork and `favicon.png` for the browser tab. The original file is preserved. The logo reads Kampuram Digi World; page copy retains the previously requested company naming.
+- Home and Contact use the official group logo supplied as a PDF and exported with a transparent background. The group favicon uses the double-arch mark. Digi World uses its own artwork and globe favicon.
 - Photography is illustrative, not the company's actual work. The images are stored locally. Google Fonts are loaded online, with system sans-serif fallbacks.
 - The homepage Media navigation, Media business-card link and footer Media link open `kampuram-media.html`. Cards navigation and its business link open `cards-kendra.html`. Books navigation and the Books business link open `kampuram-books.html`. Admin remains future work.
 - Business buttons and WhatsApp buttons use the same contact handler. The shared `WHATSAPP_NUMBER` in `script.js` is configured to the supplied business number, `919388002975`. Buttons open WhatsApp with a prefilled enquiry.
 - The location panel shows the supplied address at Madari Tower, Near Civil Station, Kacherippadi, Manjeri – 676121, Malappuram District, Kerala, India, with a phone link and a Google Maps address-search link. Social links are omitted until real account URLs are supplied.
-- Copy is proposed for design review and should be confirmed before publication. About follows the hero and covers the company story, experience, Kerala location, and a proposed mission. The experience value `15+ years` remains user-authorized dummy content and must be verified before publication. The location is now the supplied Manjeri address.
+- About introduces the group, its businesses and the founder’s literary background in Kerala.
 
 ## Image assets
 
@@ -24,11 +24,11 @@ The current homepage uses three images generated with the built-in image generat
 
 These are demo images, not the founder’s actual desk, completed client campaigns, or books available for sale. The founder’s writing and literary background informed their direction. Exact generation prompts are recorded in `assets/image-prompts.json`.
 
-Earlier Unsplash samples remain unused in the assets folder: `creative-studio.jpg` (photo-1497215728101-856f4ea42174), `media.jpg` (photo-1541462608143-67571c6738dd), and `books.jpg` (photo-1512820790803-83ca734da794).
+Digi World uses the illustrative `creative-studio.jpg` photo. Earlier unused Unsplash assets include `media.jpg` (photo-1541462608143-67571c6738dd), and `books.jpg` (photo-1512820790803-83ca734da794).
 
 ## Business logos
 
-The three homepage cards use their supplied business logos in compact flex rows, pairing a contained logo badge with its category and business name. `kampuram-ad-media-trimmed.png` trims transparent padding from the supplied advertising logo. `cardskendra-logo-trimmed.png` is a cropped render of the supplied `cardskendra-logo.pdf`, preserving its colors and tagline. The Books card uses `kampuram-books.png`. Original files and main homepage branding are preserved.
+The four homepage cards use their supplied business logos in compact flex rows, pairing a contained logo badge with its business name. `kampuram-ad-media-trimmed.png` trims transparent padding from the supplied advertising logo. `cardskendra-logo-trimmed.png` is a cropped render of the supplied `cardskendra-logo.pdf`, preserving its colors and tagline. The Books card uses `kampuram-books.png`. The Digi World card uses the existing Digi World logo.
 
 ## Earlier data seed
 
@@ -71,8 +71,18 @@ Verified desktop/tablet/mobile layouts, 320px overflow, search persistence and e
 
 ## Contact page
 
-`contact.html` adds a fifth public page with company branding, a literary banner, WhatsApp and phone links, the supplied Manjeri address, Google Maps address-search directions, and links to the three businesses. Every navbar and footer now includes Contact, and header “Let’s talk” links open it. Existing inline contact sections remain.
+`contact.html` uses group branding and shows WhatsApp, phone and the Manjeri address, with links to the four businesses. All six public pages link to Contact.
 
 `contact.css` handles the responsive two-column/stacked contact layout. It reuses `script.js` for the menu and motion, with an optional-dialog guard and a versioned script URL. Direct contact links work without JavaScript. Contact URLs in markup use the confirmed number; future shared admin settings must unify these with Home and catalogue settings. No email, opening hours, enquiry form or exact map pin is assumed.
 
 Verified desktop, tablet and narrow mobile layout, menu expansion, working Contact navigation, phone/WhatsApp/directions URLs, local imagery and JavaScript syntax. No backend or deployment was added.
+
+## Kampuram Digi World
+
+`kampuram-digi-world.html` has the supplied logo, three service cards with WhatsApp enquiries, both phone numbers, email, Instagram, Facebook page name, and Manjeri address. Facebook is shown as text until the exact page URL is supplied. Open it from the Home card, Contact business list, or any navbar or footer.
+
+The site uses concise labels and functional icons. Decorative stars, numbering, repeated badges and filler captions were removed. Sample notices remain on catalogue pages.
+
+The expanded Home page adds an illustrated company story, visual catalogue previews and practical enquiry guidance in `home.css`. Digi World now includes illustrated service descriptions, image samples, a native video preview, a WhatsApp project brief and expandable FAQs. The video is the existing four-second silent demo with no autoplay and `preload="none"`. New vector samples live in `assets/digi/`; the café name and designs are fictional. Replace these examples with approved work before launch.
+
+Checked both expanded pages at desktop and 320px phone widths, plus Digi World at 800px. Corrected clipped mobile previews and image proportions; verified video playback, FAQ expansion and loaded images. Safari has not been tested directly.

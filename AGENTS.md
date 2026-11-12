@@ -1,22 +1,22 @@
-# Kampuram Media — project memory and agent guidance
+# Kampuram Business Group — project memory and agent guidance
 
-Last consolidated: 5 November 2026. Read this file before continuing development. Keep it current as decisions change; consolidate outdated notes rather than only appending history.
+Last consolidated: 12 November 2026. Read this file before continuing development. Keep it current as decisions change; consolidate outdated notes rather than only appending history.
 
 ## Purpose and business context
 
-One company website for three businesses: Kampuram Media / Admedia (advertising), Cards Kendra (wedding invitations), and Kampuram Books (books/publications). It is a catalogue and portfolio that sends enquiries to WhatsApp. No cart, checkout, payments, or listing detail pages.
+Kampuram Business Group is the parent of Kampuram Media / Admedia (advertising), Cards Kendra (wedding invitations), Kampuram Books (books and publications), and Kampuram Digi World (design and video). The site showcases their work and sends enquiries to WhatsApp.
 
 The founder is a writer from Kerala with a close connection to literature. Use warm, literary, Kerala-inspired imagery. Do not invent his name, biography, awards, or published works.
 
-Naming is not fully reconciled: existing parent-brand copy says `Kampuran Media`; requirements also say `Kampuram Media`; the supplied main logo says `Kampuram Digi World`. Preserve the current names/artwork unless the user requests a naming change.
+Use Kampuram Business Group for the parent brand and Kampuram Media for advertising. Home and Contact use the official group logo supplied as `logo business group.pdf`. The original Digi World artwork belongs to its business page and card.
 
 ## Current scope and implementation status
 
 - Build locally using plain HTML, CSS and JavaScript only. No framework, build step, package installation, backend, or publication is required for this demo.
-- Home is built and approved. Preserve its design except for specifically requested changes. The user subsequently authorized Media navigation/card/footer links to the new page; those links are implemented.
+- Home introduces the group and links to all four businesses. The user approved the rebrand and requested removal of generic copy and decorative symbols.
 - The public advertisement catalogue is built and working, including search, filters, sample media, enquiry links and responsive layout.
 - Cards Kendra is built in `cards-kendra.html`: searchable, image-only invitation catalogue with six illustrative designs. Home and Media navigation/footer links and the Home Cards business link open it. Kampuram Books is built in `kampuram-books.html` with six illustrative titles, search and portrait covers. Books navigation, footers and the Home Books business link open it.
-- A separate `contact.html` page is built; every public navbar/footer and header “Let’s talk” link opens it. This is an authorized fifth public page, expanding the original four-page plan. Existing inline contact sections remain.
+- Contact and Digi World expand the site to six public pages. All navbars and footers link to both. The Home card and Contact business list also link to Digi World.
 - Admin, authentication, uploads, database/storage, live settings management and banner management are NOT built. Do not imply the static demo provides them.
 - The production choice remains undecided between Laravel + React and Next.js. Do not choose or scaffold one without instruction.
 - The original build prompt requested review stops after eight stages. The later instruction to just build the public page in HTML/CSS/JS superseded those stops for the static catalogue. It did not authorize a production backend.
@@ -25,7 +25,10 @@ Naming is not fully reconciled: existing parent-brand copy says `Kampuran Media`
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Home; approved layout and links to Media catalogue |
+| `index.html` | Group homepage with four business cards |
+| `home.css` | Homepage story, catalogue previews and enquiry guide |
+| `kampuram-digi-world.html` | Digi World services and contact details |
+| `kampuram-digi-world.css` | Digi World layout and contact styling |
 | `styles.css` | Shared theme and Home styling |
 | `script.js` | Home/Contact menu, Home WhatsApp actions, scroll reveals and click feedback; optional dialog guard supports Contact |
 | `contact.html` | Company contact page with parent logo, direct WhatsApp/call links, address/directions and business links |
@@ -46,14 +49,14 @@ Naming is not fully reconciled: existing parent-brand copy says `Kampuran Media`
 | `assets/demo/` | Seven vector ad creatives plus one silent MP4 fixture and captured poster |
 | `README.md` | Developer setup and asset/demo notes |
 
-Open any of the five public HTML files directly, including `contact.html`. Local preview: `python -m http.server 8080 --bind 127.0.0.1`, then visit `/index.html`, `/kampuram-media.html`, `/cards-kendra.html`, `/kampuram-books.html` or `/contact.html`. There is no npm build. Start a server when needed; do not assume one is running from an earlier chat.
+Open any of the six public HTML files directly, including `contact.html`. Local preview: `python -m http.server 8080 --bind 127.0.0.1`, then visit `/index.html`, `/kampuram-media.html`, `/cards-kendra.html`, `/kampuram-books.html`, `/kampuram-digi-world.html` or `/contact.html`. There is no npm build. Start a server when needed; do not assume one is running from an earlier chat.
 
 ## Confirmed contact details
 
 - Madari Tower, Near Civil Station, Kacherippadi, Manjeri – 676121, Malappuram District, Kerala, India.
 - Phone / WhatsApp: +91 9388002975. URL digits: `919388002975`.
 - About location is `Manjeri, Kerala`, replacing the earlier dummy Kozhikode value.
-- Contact has a `tel:` link and Google Maps search link using the supplied address. An exact map pin has not been verified. Email and social account links have not been supplied.
+- Contact has a `tel:` link and Google Maps search link using the supplied address. An exact map pin has not been verified. Group email and social accounts are pending. Digi World details are listed below.
 - IMPORTANT current limitation: Home uses `WHATSAPP_NUMBER` in `script.js`; the catalogue uses `settings.whatsappNumber` in `catalogue-data.js`. Both currently have the same confirmed number. There is not yet a single live settings service across pages. Future admin integration must unify this.
 
 ## Established theme and logos
@@ -61,19 +64,21 @@ Open any of the five public HTML files directly, including `contact.html`. Local
 - Continuous off-white background (`#fffefa`); no outer gradient, framed page container, outer rounded page corners, or decorative page shadow.
 - Orange primary accent (`#ed6a2f`, darker text accent `#bd4714`); dark text, soft borders, rounded cards and restrained shadows. WhatsApp uses green (`#16834a`).
 - DM Sans for UI/body and Manrope for headings, loaded from Google Fonts with sans-serif fallbacks. Malayalam/bilingual content and a serif accent for Cards/Books remain proposals, not approved requirements.
-- Sticky header, five main links (Home, Media, Cards, Books, Contact), hamburger on phones, footer and floating WhatsApp control.
+- Sticky header, six main links (Home, Media, Cards, Books, Digi World, Contact), hamburger on phones, footer and floating WhatsApp control.
 - Preserve original logo colours, proportions and files. Use `object-fit: contain` for logos, not cover cropping.
-- Home header/footer use `kampuram-logo-trimmed.png`, derived from the already-transparent `kampuram-logo.png`. About uses `kampuram-symbol.png`. Favicon is `assets/favicon.png`, derived from the main globe mark.
+- Home and Contact use `assets/kampuram-business-group-logo.png`, a transparent export of the supplied PDF with the white backing removed. The shared `assets/kampuram-group-favicon.png` uses the double-arch mark on a transparent background. Digi World uses its original logo and globe favicon. Other businesses retain their own artwork.
 - The Media page navbar AND footer use `kampuram-ad-media-trimmed.png`, sized by height for its taller artwork. Its banner also includes the Admedia logo. Do not replace the Home brand with it.
-- Home business cards use their own logos: Admedia, Cards Kendra, Books. Each has a compact horizontal flex row with a logo badge beside category/name. Avoid full-width standalone logo panels. Pink and navy badges match the supplied logo backgrounds.
+- Home business cards use their own logos: Admedia, Cards Kendra, Books, and Digi World. Each has a compact horizontal flex row with a logo badge beside the business name. Avoid full-width standalone logo panels. Pink and navy badges match the supplied logo backgrounds.
 - Cards Kendra page header/footer and banner use `cardskendra-logo-trimmed.png`, preserving its pink background and original proportions.
 - Cards Kendra source is `cardskendra-logo.pdf`; its rendered/cropped PNGs retain the original artwork. Books source is `kampuram-books.png`.
 
 ## Home layout and content
 
-Order: hero → About → three business cards → why choose us → contact → footer.
+Order: compact hero → four business cards → illustrated About → catalogue previews → enquiry guide → contact → footer. The hero introduces the Manjeri location and the group's offerings, and its CTA jumps to Our businesses.
 
-About covers the company story, experience, location and mission. `15+ years` is user-authorized DUMMY experience and must be verified before launch. Mission and other marketing copy are proposed for review.
+About introduces the group, its Manjeri location and the founder’s literary background, with a literary image and a short proposed purpose statement. The earlier placeholder experience figure and generic Why Choose Us copy remain removed. The user requested fuller, useful content after the initial rebrand cleanup: do not interpret removal of filler as removing substantive company/service information.
+
+Home now has visual sample previews for advertisements, invitations and books, with explicit catalogue links, plus practical guidance for enquiries (reference, quantity/format/date, price and availability confirmation). `home.css` keeps these additions scoped to Home. Images are illustrative; no experience figures, client claims or founder biography have been invented.
 
 The hero uses `writer-desk.jpg`; Media card imagery is `advertising-creatives.jpg`; Books uses `literary-books.jpg`; Cards uses `invitations.svg`. These are illustrative, not actual founder photography, client campaigns or book stock. Image-generation prompts are in `assets/image-prompts.json`.
 
@@ -109,7 +114,7 @@ The Home Media menu item, its `Explore advertisements` card link, and footer Med
 
 ## Kampuram Books catalogue
 
-- Built in plain HTML/CSS/JS using shared catalogue CSS, `kampuram-media.js`, utilities and settings; `body data-catalogue-section="books"` selects the dataset. The four originally planned public pages exist, plus the subsequently requested Contact page.
+- Built in plain HTML/CSS/JS using shared catalogue CSS, `kampuram-media.js`, utilities and settings; `body data-catalogue-section="books"` selects the dataset. The four originally planned public pages exist, plus Contact and Digi World.
 - PDF page 6 reviewed: title `Kampuram Books`, subtitle `Publications, titles and new releases`; each box has portrait cover (3:4, minimum 600px wide), title, description or author, optional accent price and WhatsApp. Boxes are non-clickable; no detail pages or lightbox.
 - Header/footer/banner use original navy `assets/kampuram-books.png`, contained without cropping. Hero reuses illustrative `literary-books.jpg` with dark overlay and orange heading accent. Same off-white theme, fonts, 4/2/1 columns, compact prices and green full-width enquiries.
 - Search-only toolbar, `?q=` persistence, empty/reset and shared 12-item pagination; no image/video filters. Prices show `₹ 280/-` with no unit; Cards alone adds `per card`.
@@ -120,14 +125,26 @@ The Home Media menu item, its `Explore advertisements` card link, and footer Med
 
 ## Company contact page
 
-- `contact.html` and `contact.css`, plain HTML/CSS with reused `script.js` for menu, reveals and press feedback. Parent main logo in header/footer, existing illustrative `writer-desk.jpg` hero; orange/off-white theme retained.
-- Direct WhatsApp enquiry (`Hi, I would like to know more about Kampuram.`), `tel:+919388002975`, full confirmed address, Google Maps address-search directions, and explicit links to all three businesses. Native links work without JavaScript. No form, email, hours, social account or exact map pin has been invented.
-- All five public navbars and footers include Contact → `contact.html`; other pages’ header “Let’s talk” buttons also open it. Contact’s “Let’s talk” scrolls to `#reach-us`. Existing inline contact sections remain.
+- `contact.html` and `contact.css`, plain HTML/CSS with reused `script.js` for menu, reveals and press feedback. Official group logo in the header and footer, with the illustrative `writer-desk.jpg` hero and orange/off-white theme.
+- Direct WhatsApp enquiry (`Hi, I would like to know more about Kampuram Business Group.`), `tel:+919388002975`, full confirmed address, Google Maps address-search directions, and explicit links to all four businesses. Native links work without JavaScript. No form, email, hours, social account or exact map pin has been invented.
+- All six navbars and footers link to Contact. The duplicate header CTA was removed. Inline contact sections remain.
 - `script.js` now guards the optional homepage dialog with `dialog?.addEventListener`; Contact does not include that dialog. Contact uses a versioned script URL to avoid serving the older dialog-dependent script from cache.
 - Contact phone/WhatsApp URLs are static confirmed values in markup, separate from Home’s JS number and the catalogue setting. Future live admin settings must update all three paths; there is still no central durable setting service.
 - Verified 5 November 2026: desktop two-column content, tablet header fit at 800px, single-column mobile and no overflow at 320px, mobile menu expansion, Home navbar and Books footer Contact navigation, image loading, direct phone/WhatsApp/map hrefs. Initial cached-script dialog error resolved by optional guard plus refreshed versioned URL; no further errors appeared on reload/navigation. Decorative location rings sit behind readable text.
 
+## Kampuram Digi World
+
+- Social media ads, graphic design (posters, banners, notices, brochures, visiting cards and other design work), motion video creation and video production. Three service cards use distinct WhatsApp messages to +91 93880 02975.
+- Use the supplied Digi World artwork and existing illustrative studio photo. Source for services and details is the user’s 11 November 2026 screenshot.
+- The Manjeri address is shared. Call numbers are +91 94465 48500 and +91 93880 02975. Email is kampuramdigiworld@gmail.com. Instagram is @kampuramdigiworld. Facebook is shown as kampuram digiworld pending the page URL. The separate Admedia Facebook line is outside Digi World’s section.
+- Service enquiry links are native anchors. The page uses shared menu/motion JavaScript and has no catalogue dataset.
+- Expanded with illustrated service cards and format lists, two image samples, a playable video, a project-brief WhatsApp link, and native expandable enquiry FAQs. No new runtime dependency or admin feature.
+- `assets/digi/social-design.svg` adapts the existing café sample for Digi World; `assets/digi/print-design.svg` is an original brochure/visiting-card mockup with a fictional café name. Preserve source Admedia assets. `assets/demo/advertisement-preview.mp4` and its poster are reused as a clearly labelled four-second silent demo, not a real client project.
+- The Digi video uses native controls, `playsinline`, `muted` and `preload="none"`, with no autoplay. This page is a service showcase, not another searchable catalogue.
+
 ## Motion and accessibility
+
+Use concise labels and remove decorative stars, emoji, numbered badges and filler captions. Keep functional vector icons, search feedback and sample content notices. Keep footer links above the fixed WhatsApp button when scrolled to the bottom.
 
 Home includes one-time staggered scroll reveals, card/image lifts, directional arrows, button ripples and menu entrance. Catalogue includes subtle card/image hovers and scroll reveals. Keep motion restrained, respect `prefers-reduced-motion` and live changes, preserve keyboard focus and usable mobile tap targets. Do not make content permanently hidden if animation fails.
 
@@ -159,6 +176,8 @@ Later direct user instructions override older examples: HTML/CSS/JS-only scope, 
 - Search was checked with combined media filters, accents/case, multiword matching, refresh, clear/reset and mobile overflow. Price formatter checks covered numeric, absent, zero, decimal and invalid amounts.
 - The most recent spacing, price-size and page-logo refinements were targeted CSS/markup changes; do not treat earlier browser QA as permanent proof for future changes.
 - Cards checks on 4 November 2026 covered 4/2/1 columns at 1280/900/390px, no overflow at 320px, six loaded images, equal desktop card heights, search/refresh, no-results/reset, mobile menu, and correct enquiry URLs. Shared Media still shows 10 ads and 3 video-filter results with no pre-play video elements or console errors.
+- On 12 November 2026, checked the group rebrand, Digi World enquiries, 320px mobile menu, six links in each navbar and footer, catalogue search/reset, video controls and footer clearance in the in-app browser. Safari was unavailable for direct testing.
+- Later 12 November expansion: visually checked Home and Digi World at 1280px and 320px, and Digi boundaries at 800px. Corrected Home grid minimum-width clipping and explicit image-height sizing. Images loaded, video completed four-second playback, FAQ expanded, and no browser console errors were reported. Native Safari remains untested. Versioned page-specific styles avoid stale cached layouts.
 - Available syntax checks: `node --check script.js`, `node --check kampuram-media.js`, `node --check catalogue-data.js`, `node --check catalogue-utils.js`. There is no installed project test suite or build pipeline.
 - Inspect actual files and git status before changes; preserve unrelated work. Do not discard, reset, commit or deploy work merely to clean the workspace.
 - Keep changes focused, do not commit secrets, verify proportionately, and report checks honestly. Keep `AGENTS.md` synchronized with completed work, approved decisions, placeholders, current limitations and outstanding tasks after each meaningful change.

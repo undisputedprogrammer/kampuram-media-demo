@@ -84,3 +84,31 @@
  *,*:before,*:after{animation:none!important;transition:none!important}
  .business-card:hover,.business-card:hover .card-image>img,.business-card:hover .business-logo,.button:hover,.button:active,.header-contact:hover,.header-contact:active,.card-link:active,.floating-whatsapp:hover,.floating-whatsapp:active,.menu-toggle:active,.button:hover>svg:last-child,.header-contact:hover svg,.text-link:hover svg,.business-card:hover .card-link svg{transform:none!important}
 }
+/* Business Group branding on Home and Contact. */
+.brand .group-logo { width: 128px; height: auto; }
+.footer-top .brand .group-logo { width: 108px; }
+.footer-bottom nav { flex-wrap: wrap; gap: 8px 18px; }
+.footer-bottom a[aria-current="page"] { color: var(--orange-dark); }
+/* Leave room to reach every footer link above the fixed WhatsApp control. */
+footer { padding-bottom: 84px; }
+.group-home .about-section { display: block; padding-bottom: 0; }
+.group-home .about-copy p { max-width: 720px; }
+.group-home .business-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.group-home .business-section { padding-bottom: 54px; }
+.group-home .business-identity { min-height: 0; }
+.group-home .business-heading h3 { margin-top: 0; font-size: clamp(16px, 1.55vw, 21px); }
+.group-home .business-logo { flex-basis: 54px; width: 54px; height: 54px; }
+.group-home .digi-logo img { object-fit: contain; }
+
+@media (max-width: 1100px) {
+  .group-home .business-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .group-home .business-grid { grid-template-columns: 1fr; }
+  .group-home .business-section { padding-bottom: 36px; }
+  .group-home .business-heading h3 { font-size: 20px; }
+  .brand .group-logo { width: 100px; }
+  .footer-top .brand .group-logo { width: 96px; }
+  .footer-bottom { padding-bottom: 0; }
+  .footer-bottom nav { gap: 8px 14px; }
+}
